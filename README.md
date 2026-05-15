@@ -1,17 +1,32 @@
-# Quartz v4
+# wShells
 
-> “[One] who works with the door open gets all kinds of interruptions, but [they] also occasionally gets clues as to what the world is and what might be important.” — Richard Hamming
+Marc Balcells's personal digital garden and notes, published at [marcusian.github.io/wShells](https://marcusian.github.io/wShells).
 
-Quartz is a set of tools that helps you publish your [digital garden](https://jzhao.xyz/posts/networked-thought) and notes as a website for free.
+Built with [Quartz v4](https://quartz.jzhao.xyz) — a static site generator for Markdown-based digital gardens.
 
-🔗 Read the documentation and get started: https://quartz.jzhao.xyz/
+---
 
-[Join the Discord Community](https://discord.gg/cRFFHYye7t)
+## Editing content
 
-## Sponsors
+All notes live in the `content/` folder. You can open it as an [Obsidian](https://obsidian.md) vault:
 
-<p align="center">
-  <a href="https://github.com/sponsors/jackyzha0">
-    <img src="https://cdn.jsdelivr.net/gh/jackyzha0/jackyzha0/sponsorkit/sponsors.svg" />
-  </a>
-</p>
+1. Open Obsidian → **Open folder as vault**
+2. Select the `content/` directory inside this repository
+3. Write and edit Markdown files normally — wikilinks, callouts, LaTeX, and Obsidian-flavoured syntax are all supported
+
+---
+
+## GitHub Actions deployment
+
+Pushing to `main` automatically builds the site and deploys it to GitHub Pages via the workflow at `.github/workflows/deploy.yaml`.
+
+The pipeline runs two jobs:
+
+| Job | What it does |
+|-----|--------------|
+| **build** | Checks out the repo, installs Node 22 dependencies (`npm ci`), runs `npx quartz build` to compile the site into the `public/` folder, then uploads it as a Pages artifact |
+| **deploy** | Deploys the uploaded artifact to GitHub Pages |
+
+The live site is available at **[marcusian.github.io/wShells](https://marcusian.github.io/wShells)** within a minute or two of each push.
+
+To trigger a deployment manually without a push, go to **Actions → Deploy to GitHub Pages → Run workflow**.
