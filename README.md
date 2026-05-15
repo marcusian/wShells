@@ -1,6 +1,6 @@
 # wShells
 
-Marc Balcells's personal digital garden and notes, published at [marcusian.github.io/wShells](https://marcusian.github.io/wShells).
+Marc Balcells's personal digital notes, published at [marcusian.github.io/wShells](https://marcusian.github.io/wShells).
 
 Built with [Quartz v4](https://quartz.jzhao.xyz) — a static site generator for Markdown-based digital gardens.
 
