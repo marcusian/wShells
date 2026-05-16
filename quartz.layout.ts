@@ -1,8 +1,6 @@
 import { PageLayout, SharedLayout } from "./quartz/cfg"
 import * as Component from "./quartz/components"
 
-const folderOrder: Record<string, number> = { science: 0, galaxies: 1 }
-const scienceOrder: Record<string, number> = { science: 0, observing_programmes: 1 }
 
 // components shared across all pages
 export const sharedPageComponents: SharedLayout = {
@@ -43,6 +41,8 @@ export const defaultContentPageLayout: PageLayout = {
     }),
     Component.Explorer({
       sortFn: (a, b) => {
+        const folderOrder: Record<string, number> = { science: 0, galaxies: 1 }
+        const scienceOrder: Record<string, number> = { science: 0, observing_programmes: 1 }
         const ka = a.slugSegment ?? ""
         const kb = b.slugSegment ?? ""
         if (a.isFolder && b.isFolder) {
@@ -85,6 +85,8 @@ export const defaultListPageLayout: PageLayout = {
     }),
     Component.Explorer({
       sortFn: (a, b) => {
+        const folderOrder: Record<string, number> = { science: 0, galaxies: 1 }
+        const scienceOrder: Record<string, number> = { science: 0, observing_programmes: 1 }
         const ka = a.slugSegment ?? ""
         const kb = b.slugSegment ?? ""
         if (a.isFolder && b.isFolder) {
