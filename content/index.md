@@ -1,6 +1,6 @@
 ---
-title: Welcome to Quartz
+title: Shells with WEAVE, Pocessing and Analysis Notebook
 ---
 
-This is a blank Quartz installation.
-See the [documentation](https://quartz.jzhao.xyz) for how to get started.
+This is a Work Notebook to record work done and for communication with collaborators. 
+
