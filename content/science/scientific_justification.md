@@ -1,9 +1,15 @@
-# Science
+# Science Justification
 
+## Goals
+
+1. IFU mapping of cores of galaxies with narrow velocity features. targets: NGC 474, NGC 7626. 
+2. Re-measure line-of-sight velocities of outer shells published to date. Targets: NGC 474; NGC 3656. 
+3. Get stellar population diagnostics in and around shells. Targets: NGC 474, NGC 3656, NGC 5982, NGC 7626
+4. Get gas excitation diagnostics in galaxies with optical emission lines. Targets: NGC 3656.
 
 ## Motivation
 
-- **Shell galaxies** provide good case studies of the merger process: merger dynamics and impact on galaxy evolution. Work in the 1980's and 1990's was based on interpreting imaging data: shell morphologies, plus a bit of shell colours. 
+- **Shell galaxies** provide good case studies of the merger process: merger dynamics and impact on galaxy evolution. Work in the 1980's and 1990's was based on interpreting imaging data: shell morphologies, plus a bit of shell colours, but not on kinematics or populations.
 
 - Examples of our work on shell galaxies in the 1990's and 2000's, led by the late David Carter:
     - Spectroscopy of nuclear regions with WHT/ISIS. This revealed cases of **peculiar core kinematics** (Balcells & Carter, NGC 7626, Oosterloo et al. on NGC 5982, Hau et al on NGC 474
@@ -19,14 +25,6 @@
         - Stellar populations
         - ISM excitation and extinction
         - Extinction
-
-
-## Goals
-
-1. IFU mapping of cores of galaxies with narrow velocity features. targets: NGC 474, NGC 7626. 
-1. Re-measure line-of-sight velocities of outer shells published to date. Targets: NGC 474; NGC 3656. 
-1. Get stellar population diagnostics in and around shells. Targets: NGC 474, NGC 3656, NGC 5982, NGC 7626
-1. Get gas excitation diagnostics in galaxies with optical emission lines. Targets: NGC 3656.
 
 
 
