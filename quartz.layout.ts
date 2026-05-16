@@ -1,39 +1,8 @@
 import { PageLayout, SharedLayout } from "./quartz/cfg"
 import * as Component from "./quartz/components"
-import { Options } from "./quartz/components/Explorer"
 
-const folderOrder: Record<string, number> = {
-  science: 0,
-  galaxies: 1,
-}
-
-const scienceFileOrder: Record<string, number> = {
-  science: 0,
-  observing_programmes: 1,
-}
-
-const explorerSort: Options["sortFn"] = (a, b) => {
-  const nameA = a.displayName.toLowerCase()
-  const nameB = b.displayName.toLowerCase()
-
-  // Top-level folders: use explicit order
-  if (a.isFolder && b.isFolder) {
-    const pa = folderOrder[nameA] ?? 99
-    const pb = folderOrder[nameB] ?? 99
-    if (pa !== pb) return pa - pb
-    return nameA.localeCompare(nameB)
-  }
-
-  // Files inside the science folder: use explicit order
-  const pa = scienceFileOrder[nameA] ?? 99
-  const pb = scienceFileOrder[nameB] ?? 99
-  if (pa !== pb) return pa - pb
-
-  // Folders before files as a fallback
-  if (a.isFolder !== b.isFolder) return a.isFolder ? -1 : 1
-
-  return nameA.localeCompare(nameB)
-}
+const folderOrder: Record<string, number> = { science: 0, galaxies: 1 }
+const scienceOrder: Record<string, number> = { science: 0, observing_programmes: 1 }
 
 // components shared across all pages
 export const sharedPageComponents: SharedLayout = {
@@ -72,7 +41,25 @@ export const defaultContentPageLayout: PageLayout = {
         { Component: Component.ReaderMode() },
       ],
     }),
-    Component.Explorer({ sortFn: explorerSort }),
+    Component.Explorer({
+      sortFn: (a, b) => {
+        const ka = a.slugSegment ?? ""
+        const kb = b.slugSegment ?? ""
+        if (a.isFolder && b.isFolder) {
+          const pa = folderOrder[ka] ?? 99
+          const pb = folderOrder[kb] ?? 99
+          if (pa !== pb) return pa - pb
+          return ka.localeCompare(kb)
+        }
+        if (!a.isFolder && !b.isFolder) {
+          const pa = scienceOrder[ka] ?? 99
+          const pb = scienceOrder[kb] ?? 99
+          if (pa !== pb) return pa - pb
+          return ka.localeCompare(kb)
+        }
+        return a.isFolder ? -1 : 1
+      },
+    }),
     Component.DesktopOnly(Component.TableOfContents()),
   ],
   right: [
@@ -96,7 +83,25 @@ export const defaultListPageLayout: PageLayout = {
         { Component: Component.Darkmode() },
       ],
     }),
-    Component.Explorer({ sortFn: explorerSort }),
+    Component.Explorer({
+      sortFn: (a, b) => {
+        const ka = a.slugSegment ?? ""
+        const kb = b.slugSegment ?? ""
+        if (a.isFolder && b.isFolder) {
+          const pa = folderOrder[ka] ?? 99
+          const pb = folderOrder[kb] ?? 99
+          if (pa !== pb) return pa - pb
+          return ka.localeCompare(kb)
+        }
+        if (!a.isFolder && !b.isFolder) {
+          const pa = scienceOrder[ka] ?? 99
+          const pb = scienceOrder[kb] ?? 99
+          if (pa !== pb) return pa - pb
+          return ka.localeCompare(kb)
+        }
+        return a.isFolder ? -1 : 1
+      },
+    }),
     Component.DesktopOnly(Component.TableOfContents()),
   ],
   right: [],
