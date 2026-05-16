@@ -63,6 +63,7 @@ export const defaultListPageLayout: PageLayout = {
       ],
     }),
     Component.Explorer(),
+    Component.DesktopOnly(Component.TableOfContents()),
   ],
   right: [],
 }
