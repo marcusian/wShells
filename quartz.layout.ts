@@ -40,6 +40,8 @@ export const defaultContentPageLayout: PageLayout = {
       ],
     }),
     Component.Explorer({
+      folderDefaultState: "open",
+      useSavedState: false,
       sortFn: (a, b) => {
         const folderOrder: Record<string, number> = { science: 0, galaxies: 1 }
         const scienceOrder: Record<string, number> = { scientific_justification: 0, observing_programmes: 1 }
@@ -84,9 +86,11 @@ export const defaultListPageLayout: PageLayout = {
       ],
     }),
     Component.Explorer({
+      folderDefaultState: "open",
+      useSavedState: false,
       sortFn: (a, b) => {
         const folderOrder: Record<string, number> = { science: 0, galaxies: 1 }
-        const scienceOrder: Record<string, number> = { science: 0, observing_programmes: 1 }
+        const scienceOrder: Record<string, number> = { scientific_justification: 0, observing_programmes: 1 }
         const ka = a.slugSegment ?? ""
         const kb = b.slugSegment ?? ""
         if (a.isFolder && b.isFolder) {
